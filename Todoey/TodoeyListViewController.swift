@@ -11,10 +11,14 @@ import UIKit
 class TodoeyListViewController: UITableViewController {
     
     var itemArray = ["Find Chiru", "Buy Mango", "Distroy Demons"]
-    
+    let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setStatusBar(.lightContent)
+        
+        if let items = defaults.array(forKey: "TodoeyListArray") as? [String] {
+            self.itemArray = items
+        } 
     }
     
     @IBAction func addButtonTask(_ sender: UIBarButtonItem) {
@@ -25,6 +29,7 @@ class TodoeyListViewController: UITableViewController {
             guard let `self` = self else { return }
             if !textField.text!.isEmpty {
                 self.itemArray.append(textField.text!)
+                self.defaults.set(self.itemArray, forKey: "TodoeyListArray")
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
