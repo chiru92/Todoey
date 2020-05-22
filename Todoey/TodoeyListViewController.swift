@@ -10,15 +10,17 @@ import UIKit
 
 class TodoeyListViewController: UITableViewController {
     
-    var itemArray = ["Find Chiru", "Buy Mango", "Distroy Demons"]
+    var itemArray: [Item] = []
     let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setStatusBar(.lightContent)
-        
-        if let items = defaults.array(forKey: "TodoeyListArray") as? [String] {
+        itemArray.append(Item(title: "Find Chiru", done: false))
+        itemArray.append(Item(title: "Buy Mango", done: false))
+        itemArray.append(Item(title: "Distroy Demons", done: false))
+        if let items = defaults.array(forKey: "TodoeyListArray") as? [Item] {
             self.itemArray = items
-        } 
+        }
     }
     
     @IBAction func addButtonTask(_ sender: UIBarButtonItem) {
@@ -28,7 +30,7 @@ class TodoeyListViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Item", style: .default) { [weak self] (action) in
             guard let `self` = self else { return }
             if !textField.text!.isEmpty {
-                self.itemArray.append(textField.text!)
+                self.itemArray.append(Item(title: textField.text!, done: false))
                 self.defaults.set(self.itemArray, forKey: "TodoeyListArray")
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
@@ -51,8 +53,9 @@ class TodoeyListViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoeyItemCell", for: indexPath)
-        cell.textLabel?.text = itemArray[indexPath.row]
-        cell.accessoryType = .none
+        let item = itemArray[indexPath.row]
+        cell.textLabel?.text = item.title
+        cell.accessoryType = item.done ? .checkmark : .none
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         return cell
     }
@@ -60,10 +63,13 @@ class TodoeyListViewController: UITableViewController {
     
     // MARK: TableView Delegate Methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        cell?.accessoryType = cell?.accessoryType == .checkmark ? .none : .checkmark
+//        let cell = tableView.cellForRow(at: indexPath)
+        let item = itemArray[indexPath.row]
+//        cell?.accessoryType = cell?.accessoryType == .checkmark ? .none : .checkmark
+        item.done = !item.done
         
         tableView.deselectRow(at: indexPath, animated: true)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
 
