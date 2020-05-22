@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		3767699E2477ABFD00606878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3767699D2477ABFD00606878 /* AppDelegate.swift */; };
 		376769A02477ABFD00606878 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3767699F2477ABFD00606878 /* SceneDelegate.swift */; };
-		376769A22477ABFD00606878 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376769A12477ABFD00606878 /* ViewController.swift */; };
+		376769A22477ABFD00606878 /* TodoeyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376769A12477ABFD00606878 /* TodoeyListViewController.swift */; };
 		376769A52477ABFD00606878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 376769A32477ABFD00606878 /* Main.storyboard */; };
 		376769A72477AC0D00606878 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 376769A62477AC0D00606878 /* Assets.xcassets */; };
 		376769AA2477AC0D00606878 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 376769A82477AC0D00606878 /* LaunchScreen.storyboard */; };
+		376769B22477B2C300606878 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376769B12477B2C300606878 /* UIViewController + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3767699A2477ABFD00606878 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3767699D2477ABFD00606878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3767699F2477ABFD00606878 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		376769A12477ABFD00606878 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		376769A12477ABFD00606878 /* TodoeyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoeyListViewController.swift; sourceTree = "<group>"; };
 		376769A42477ABFD00606878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		376769A62477AC0D00606878 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		376769A92477AC0D00606878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		376769AB2477AC0D00606878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		376769B12477B2C300606878 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,12 @@
 			children = (
 				3767699D2477ABFD00606878 /* AppDelegate.swift */,
 				3767699F2477ABFD00606878 /* SceneDelegate.swift */,
-				376769A12477ABFD00606878 /* ViewController.swift */,
+				376769A12477ABFD00606878 /* TodoeyListViewController.swift */,
 				376769A32477ABFD00606878 /* Main.storyboard */,
 				376769A62477AC0D00606878 /* Assets.xcassets */,
 				376769A82477AC0D00606878 /* LaunchScreen.storyboard */,
 				376769AB2477AC0D00606878 /* Info.plist */,
+				376769B12477B2C300606878 /* UIViewController + Extension.swift */,
 			);
 			path = Todoey;
 			sourceTree = "<group>";
@@ -138,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				376769A22477ABFD00606878 /* ViewController.swift in Sources */,
+				376769A22477ABFD00606878 /* TodoeyListViewController.swift in Sources */,
 				3767699E2477ABFD00606878 /* AppDelegate.swift in Sources */,
+				376769B22477B2C300606878 /* UIViewController + Extension.swift in Sources */,
 				376769A02477ABFD00606878 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +291,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RB6572M484;
 				INFOPLIST_FILE = Todoey/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +310,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RB6572M484;
 				INFOPLIST_FILE = Todoey/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
